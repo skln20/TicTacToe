@@ -31,8 +31,8 @@ namespace Tic_Tac_Toe
             }
 
             //invalid input
-            if(Ocount > Xcount || (Xcount - Ocount) > 1 || winningCombinationX(state) && winningCombinationY(state) ||
-                winningCombinationY(state) && Xcount > Ocount)
+            if(Ocount > Xcount || (Xcount - Ocount) > 1 || winningCombinationX(state) && winningCombinationO(state) ||
+                winningCombinationO(state) && Xcount > Ocount)
             {
                 Console.WriteLine("Wait, what?");
                 return;
@@ -45,8 +45,8 @@ namespace Tic_Tac_Toe
                 return;
             }
 
-            //Y won
-            if (winningCombinationY(state))
+            //O won
+            if (winningCombinationO(state))
             {
                 Console.WriteLine("O won.");
                 return;
@@ -89,7 +89,7 @@ namespace Tic_Tac_Toe
             }
         }
 
-        private static bool winningCombinationY(char[,] state)
+        private static bool winningCombinationO(char[,] state)
         {
             if (state[0, 0] == 'O' && state[0, 1] == 'O' && state[0, 2] == 'O' ||
                state[1, 0] == 'O' && state[1, 1] == 'O' && state[1, 2] == 'O' ||
